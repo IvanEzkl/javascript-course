@@ -258,54 +258,299 @@
 // console.log(`${passedCount} out of ${grades.length} students passed`);
 
 
-const grades = [78, 85, 92, 67, 88, 95, 73, 82];
+// const grades = [78, 85, 92, 67, 88, 95, 73, 82];
 
 
-function calculateAverage(grades) {
-    let sum = 0;
-    for (let i = 0; i < grades.length; i++) {
-        sum += grades[i];
-    } 
-   return sum / grades.lenght; 
+// function calculateAverage(grades) {
+//     let sum = 0;
+//     for (let i = 0; i < grades.length; i++) {
+//         sum += grades[i];
+//     } 
+//    return sum / grades.lenght; 
+// };
+
+// function findHighestGrade(grades) {
+//     let highest = grades[0];
+//     for (let i = 1; i < grades.length; i++) {
+//         if (grades[i] > highest) {
+//             highest = grades[i];
+//         }
+//     }
+//     return highest;
+// }
+
+// function findLowestGrade(grades) {
+//   let lowest = grades[0];
+//   for (let i = 1; i < grades.length; i++) {
+//     if (grades[i] < lowest) {
+//       lowest = grades[i];
+//     }
+//   }
+//   return lowest;
+// }
+
+// function countPassing(grades, passingGrade) {
+//   let count = 0;
+//   for (let i = 0; i < grades.length; i++) {
+//     if (grades[i] >= passingGrade) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// const average = calculateAverage(grades);
+// const highest = findHighestGrade(grades);
+// const lowest = findLowestGrade(grades);
+// const passing = countPassing(grades, 70);
+
+// console.log("=== GRADE REPORT ===");
+// console.log(`Average: ${average.toFixed(2)}`);
+// console.log(`Highest: ${highest}`);
+// console.log(`Lowest: ${lowest}`);
+// console.log(`Passing students: ${passing} out of ${grades.length}`);
+
+
+////////////////////////////////////
+// The Array Problem
+
+// const jonasArray = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
+
+// console.log(jonasArray[0]); 
+// console.log(jonasArray[1]); 
+// console.log(jonasArray[2]);
+
+////////////////////////////////////
+// Objects - Creation with Object Literal Syntax
+
+// console.log("=== OBJECTS ===");
+
+// const jonas = {
+//   firstname: "Jonas",
+//   lastname: "Schmedtmann",
+//   age: 2037 - 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"]
+// };
+// console.log(jonas);
+
+// const book = {
+//   title: "The Great Gatsby",
+//   author: "F. Scott Fitzgerald",
+//   year: 1925,
+//   genres: ["Novel", "Historical"],
+//   isAvailable: true
+// };
+
+// const playlist = {
+//   name: "Chill Vibes",
+//   creator: "Ivan",
+//   songs: ["Sunflower", "Levitating", "Peaches"],
+//   genre: "Pop"
+// };
+
+// console.log (book.title);
+// console.log(book['author']);
+
+// console.log(playlist.name);
+// console.log(playlist["creator"]);
+
+// book.yearPublished = 1926;
+// playlist.description = "Relaxing pop songs";
+
+// book.isRead = false;
+// playlist.genre = "Pop/Electronic";
+
+// console.log(book);
+// console.log(playlist);
+
+// const listOfYears = [1991, 2007, 1969, 2020];
+// const shoppingList = ["apples", "bananas", "milk", "bread"];
+// const testScores = [85, 92, 78, 96, 88];
+
+// const person = {
+//   name: "Jonas",
+//   age: 46,
+//   occupation: "teacher",
+// };
+
+// const car = {
+//   brand: "Toyota",
+//   model: "Camry",
+//   year: 2020,
+//   color: "blue",
+// };
+
+// const student = {
+//   name: "Sarah",
+//   grades: [85, 92, 78], 
+//   address: {
+//     // Object inside object
+//     street: "123 Main St",
+//     city: "New York",
+//   },
+// };
+
+// console.log(student.grades[0]);
+// console.log(student.address.city);
+
+////////////////////////////////////
+// Object Methods
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  
+  calcAge: function (birthYear) {
+    return 2037 - birthYear;
+  },
 };
 
-function findHighestGrade(grades) {
-    let highest = grades[0];
-    for (let i = 1; i < grades.length; i++) {
-        if (grades[i] > highest) {
-            highest = grades[i];
-        }
-    }
-    return highest;
-}
 
-function findLowestGrade(grades) {
-  let lowest = grades[0];
-  for (let i = 1; i < grades.length; i++) {
-    if (grades[i] < lowest) {
-      lowest = grades[i];
-    }
-  }
-  return lowest;
-}
+console.log(jonas.calcAge(1991));
+console.log(jonas.calcAge(jonas.birthYear));
 
-function countPassing(grades, passingGrade) {
-  let count = 0;
-  for (let i = 0; i < grades.length; i++) {
-    if (grades[i] >= passingGrade) {
-      count++;
-    }
-  }
-  return count;
-}
+const jonasImproved = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
 
-const average = calculateAverage(grades);
-const highest = findHighestGrade(grades);
-const lowest = findLowestGrade(grades);
-const passing = countPassing(grades, 70);
+  calcAge: function () {
+    console.log(this); 
+    return 2037 - this.birthYear; 
+  },
+};
 
-console.log("=== GRADE REPORT ===");
-console.log(`Average: ${average.toFixed(2)}`);
-console.log(`Highest: ${highest}`);
-console.log(`Lowest: ${lowest}`);
-console.log(`Passing students: ${passing} out of ${grades.length}`);
+console.log(jonasImproved.calcAge());
+
+const jonasAdvanced = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear; 
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+  },
+};
+
+console.log(jonasAdvanced.calcAge());
+console.log(jonasAdvanced.age);
+console.log(jonasAdvanced.getSummary());
+
+const calculator = {
+  num1: 10,
+  num2: 5,
+  operator: "+",
+  
+  add: function() {
+    return this.num1 + this.num2;
+  },
+
+  subtract: function() {
+    return this.num1 - this.num2;
+  },
+
+  multiply: function() {
+    return this.num1 * this.num2;
+  },
+
+  divide: function() {
+    return this.num1 / this.num2;
+  },
+
+  calculate: function() {
+    if (this.operator === "+") return this.add();
+    if (this.operator === "-") return this.subtract();
+    if (this.operator === "*") return this.multiply();
+    if (this.operator === "/") return this.divide();
+    return "Invalid operator";
+  },
+
+  getResult: function() {
+    return `${this.num1} ${this.operator} ${this.num2} = ${this.calculate()}`;
+  },
+};
+
+console.log(calculator.calculate());
+console.log(calculator.getResult());
+
+////////////////////////////////////
+// Coding Challenge #3 - User Profile System
+
+const user = {
+  firstName: "Sarah",
+  lastName: "Johnson",
+  birthYear: 1995,
+  location: "New York",
+  interests: ["photography", "travel", "coding"],
+  friends: [
+    { name: "Michael", status: "active" },
+    { name: "Emma", status: "inactive" },
+    { name: "David", status: "active" },
+  ],
+  isActive: true,
+
+
+  calcAge: function () {
+    this.age = new Date().getFullYear() - this.birthYear;
+    return this.age;
+  },
+
+
+  addFriend: function (name, status = "active") {
+    this.friends.push({ name, status });
+    return this.friends.length;
+  },
+
+
+  getActiveFriends: function () {
+    return this.friends.filter(friend => friend.status === "active").length;
+  },
+
+
+  toggleStatus: function () {
+    this.isActive = !this.isActive;
+    return this.isActive;
+  },
+
+  
+  getSummary: function () {
+    this.calcAge();
+    return `👤 ${this.firstName} ${this.lastName} (${this.age} years old)
+Location: ${this.location}
+Status: ${this.isActive ? "Active" : "Inactive"}
+ Friends: ${this.friends.length} total, ${this.getActiveFriends()} active
+Interests: ${this.interests.join(", ")}`;
+  },
+};
+
+
+console.log(user.getSummary());
+user.addFriend("Alex", "active");
+user.toggleStatus();
+console.log(`\nAfter updates:`);
+console.log(user.getSummary());
